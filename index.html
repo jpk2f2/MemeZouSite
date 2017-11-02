@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mizzou Memes</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="mutiger.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> <!-- needed for angularjs-->
+    <link rel= "stylesheet" type= "text/css" href= "styles.css">
+    <script type="text/javascript" src="scripts.js"></script>
+
+</head>
+<div class="text-center">
+    <img style="margin-top:0;width:66%;height:10%;" src="memesbanner.jpg" alt="image not loading"/>
+    <h1>Meme Maker</h1>
+    <div class="col-md-offset-4 col-md-4">
+        <form class="form">
+            <div class="form-group text-center">
+                <input type="text" name="search" class="form-control input-box" placeholder="Dank Meme Text" required>
+                <div class="input-group-btn">
+                    <button id="submitButton" class="btn btn-primary">Enter your text here</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="col-md-12 text-center" style="width:100%;">Drop meme base here or select from below.<br>
+</div>
+
+<div id="holder" class="emptyHolder" onmouseenter="showHover()" ondragenter="showHover()" ondragexit="hideHover()"
+     onmouseleave="hideHover()">
+    <div style="width:100%">
+        <img onclick="showFileUpload()" id="upload_img" src="#" style="display:none;width:100%;height:100%"/>
+        <input id="fileInput" class="form-control" type="file" accept="image/*"
+               onchange="showImage(this)" style="width:100%;height:100%;padding:40%"/>
+    </div>
+
+</div>
