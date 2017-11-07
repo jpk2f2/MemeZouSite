@@ -6,37 +6,23 @@
     padding: 60px 50px;
 }
 #holder {
-    display: flex;
-    display: -webkit-flex;
-    width: 35%;
+    display: block;
+    display: -webkit-block;
+  /*  width: 35%; */
     max-width: 500px;
-    height: 35%;
+    width: 500px;
+  /*  height: 35%; */
+    height: 500px;
     max-height: 500px;
     margin: 20px auto;
+    border: 10px dashed #ccc;
+    margin-top: auto;
 }
 
 .emptyHolder {
 
     border: 10px dashed #ccc;
 
-}
-
-
-input[type=text] {
-    width: 50%;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-    width: 100%;
-    color: blue;
-}
-
-input.input-box {
-    margin:auto;
-    margin-bottom:10px;
 }
 
 .jumbotron {
