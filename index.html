@@ -14,30 +14,39 @@
     <script type="text/javascript" src="scripts.js"></script>
 
 </head>
+
+<body>
 <div class="text-center">
     <img style="margin-top:0;width:66%;height:10%;" src="memesbanner.jpg" alt="image not loading"/>
     <h1>Meme Maker</h1>
     <div class="col-md-offset-4 col-md-4">
-        <form class="form">
+    <!--<div class="col-md-12">-->
+        <!--<form class="form">-->
+        <form>
             <div class="form-group text-center">
               <select onchange="document.getElementById('memePic').src = this.value">
                 <option disabled selected value> -- Select Mean Meme -- </option>
                 <option value="grumpy.jpg">Grumpy Cat</option>
               </select>
               <br>
-              <div class="input-group-btn">
-                <button id="memeButton" class="btn btn-primary">Submit Meme</button>
-              </div>
               <input type="text" name="topText" class="form-control input-box" placeholder="Top Text Limit 50 Characters">
               <input type="text" name="bottomText" class="form-control input-box" placeholder="Bottom Text Limit 50 Characters">
-              <div class="input-group-btn">
+              <div class="input-group-btn"style="margin-top:1px;">
                   <button id="submitButton" class="btn btn-primary">Add Text</button>
               </div>
+            </div>
+            <div class="input-group-btn" style="margin-top:1px;">
+              <button id="memeButton" class="btn btn-primary">Submit Meme</button>
             </div>
         </form>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="holder" class="col-md-offset-8">
+  <img id="memePic"></img>
 </div>
-<div id="holder">
-  <img id="memePic" style="width: 100%; height= 100%;"></img>
-</div>
+</body>

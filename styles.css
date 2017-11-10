@@ -1,34 +1,8 @@
-.jumbotron {
-    text-align: center;
-}
-
-.container-fluid {
-    padding: 60px 50px;
-}
-#holder {
-    display: block;
-    display: -webkit-block;
-  /*  width: 35%; */
-    max-width: 500px;
-    width: 500px;
-  /*  height: 35%; */
-    height: 500px;
-    max-height: 500px;
-    margin: 20px auto;
-    border: 10px dashed #ccc;
-    margin-top: auto;
-}
-
-.emptyHolder {
+/*.emptyHolder {
 
     border: 10px dashed #ccc;
 
 }
-
-.jumbotron {
-    background: #404040;
-}
-
 .hoverBox {
     border: 20px dashed #ccc;
     cursor: pointer;
@@ -41,4 +15,20 @@
   text-align: center;
   width: 100%;
   padding-top: 5px;
+}
+*/
+#holder {
+    /*display: block;
+    display: -webkit-block;*/
+  /*  width: 35%; */
+    max-width: 100%;
+    width: 500px;
+  /*  height: 35%; */
+    height: 500px;
+    max-height: 100%;
+    margin-top: 20%;
+    border: 10px dashed #ccc;
+}
+.container-fluid {
+    padding: 60px 50px;
 }
