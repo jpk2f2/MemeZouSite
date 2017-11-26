@@ -15,17 +15,15 @@
 
 </head>
 
+
+
 <body>
-<div class="text-center">
-    <img style="margin-top:0;width:66%;height:10%;" src="memesbanner.jpg" alt="image not loading"/>
     <h1>Meme Maker</h1>
-    <div class="col-md-offset-4 col-md-4">
-    <!--<div class="col-md-12">-->
-        <!--<form class="form">-->
+    <div class="column-12">
         <form>
             <div class="form-group text-center">
               <select onchange="document.getElementById('memePic').src = this.value">
-                <option disabled selected value> -- Select Mean Meme -- </option>
+                <option disabled selected value> -- Select Meme -- </option>
                 <option value="grumpy.jpg">Grumpy Cat</option>
               </select>
               <br>
@@ -41,16 +39,7 @@
             </div>
         </form>
         <div id="holder" class="col-md-offset-1 col-md-8">
-          <img style="margin:center; width:500px; height:500px;" id="memePic"></img>
+          <img style="margin:center; width:500px; height:500px;" id="memePic">
         </div>
     </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!--<div id="holder" class="col-md-4">
-  <img id="memePic"></img>
-</div> -->
 </body>
