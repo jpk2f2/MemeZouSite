@@ -184,7 +184,7 @@
                         type: 'POST',
                         url: 'getNames.php',
                         cache: false,
-                    })        
+                    });        
                 }
                 function search(){
                     var temp = document.getElementById("searchid").value;
@@ -209,11 +209,11 @@
                         url: 'upload.php',
                         data: searchString
 
-                        }
+                        //}
                         //success: function(result) {
                           //  alert(result);
                             //$("p").text(result);
-                        }
+                       // }
                     });
                 }
                 function download() {
