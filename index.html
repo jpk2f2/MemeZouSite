@@ -71,6 +71,17 @@
                    <input onchange="onFileSelected(event)" type="file" name="myImage" style="display: none;" accept="image/x-png,image/gif,image/jpeg">Select Image
                    <br>
                 </label>
+
+                <div class = "dropdown">
+                    <button class = "btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pick a meme
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <script>
+                            get_names();
+                        </script>
+
+                    </ul>
+                </div>    
             </div>
 
             <div class="text-center">
@@ -96,6 +107,9 @@
             </span>
 
             <script>
+                window.onload = function() {
+                    getNames();
+                };
                 var memeSize = 300;
                 var canvas = document.getElementById('meme');
                 context = canvas.getContext('2d');
@@ -165,7 +179,14 @@
                         }
                     });
                 }
-                fucntion search(){
+                function get_names(){
+                    $.ajax({
+                        type: 'POST',
+                        url: 'getNames.php',
+                        cache: false,
+                    })        
+                }
+                function search(){
                     var temp = document.getElementById("searchid").value;
                     var searchString = 'search_string='+temp;
                     if(temp == ''){
