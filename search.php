@@ -17,6 +17,8 @@ mysqli_stmt_bind_result($stmt, $id);
 
 mysqli_stmt_fetch($stmt);
 
+echo json_encode($id);
+
 mysqli_stmt_close($stmt);
 
 
