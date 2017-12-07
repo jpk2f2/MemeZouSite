@@ -254,7 +254,8 @@
                         //var loc = 
                         
                     };
-                    img.src = 'http://craftycat3.ddns.net/memes/'+x+'.jpg';
+                    //img.src = 'http://craftycat3.ddns.net/memes/'+x+'.jpg';
+                    img.src = 'https://mizzoumememaker.com/memes/'+x+'.jpg';
                     memeify();
                     }                
                 function onFileSelected(event) {
