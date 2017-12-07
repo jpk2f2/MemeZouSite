@@ -256,7 +256,7 @@
                     };
                     //img.src = 'http://craftycat3.ddns.net/memes/'+x+'.jpg';
                     img.src = 'https://mizzoumememaker.com/memes/'+x+'.jpg';
-                    memeify();
+                   // memeify();
                     }                
                 function onFileSelected(event) {
                     var file = event.target.files[0];
