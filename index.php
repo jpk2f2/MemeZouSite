@@ -249,6 +249,8 @@
                     var imgtag = document.getElementById("meme");
                     var ctx = imgtag.getContext("2d");
                     var img = new Image();
+                    imgtag.width = memeSize;
+                    imgtag.height = memeSize;
                     img.onload = function() {
                        ctx.drawImage(img, 0, 0);
                         //var loc = 
