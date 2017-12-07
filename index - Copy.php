@@ -76,9 +76,37 @@
                     <button class = "btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pick a meme
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <script>
-                            get_names();
-                        </script>
+                        
+                        <?php
+                            $link = mysqli_connect("localhost", "root","CraftyCat3","meme_site");
+
+                            if(!$link){
+                                echo "Error: unable to connect to MySQL";
+                                exit;
+                            }
+
+                            //$stmt = mysqli_prepare($link, "SELECT id FROM Pictures WHERE title=? ");
+                            $stmt = mysqli_prepare($link, "SELECT id,title FROM Pictures");
+                            //mysqli_stmt_bind_param($stmt, 's', $searchString);
+
+                            //$searchString=$_POST['search_string'];
+
+                            mysqli_stmt_execute($stmt);
+
+                            mysqli_stmt_bind_result($stmt, $id, $title);
+
+                            while(mysqli_stmt_fetch($stmt)){
+                               //echo "<li><a href='memes/","$id",".jpg' onchange='getPicture($id)'>$title</a></li>";
+                                echo "<li onclick='getPicture($id)'>$title</li>";
+                            }
+
+                            //echo json_encode($id);
+
+                            mysqli_stmt_close($stmt);
+
+                            mysqli_close($link);
+
+                        ?>
 
                     </ul>
                 </div>    
@@ -96,8 +124,10 @@
             </span>
 
             <span class="text-center" style="display: block; margin: 0 auto;">
-                <button name="Save Image" value="Save Image" class="btn btn-primary" onclick="save2()">Save Image</button>
+                
                 <button name="Download Image" value="Download Image" class ="btn btn-primary" onclick="download()">Download Image</button>
+                <!-- <button name="Save Image" value="Save Image" class="btn btn-primary" onclick="save2()">Upload Image</button> -->
+                <button name="Save Image" value="Save Image" class="btn btn-primary" onclick="location.href = 'upload.php';">Upload Image</button>
                 <button name="Upload Imgur" value="Upload Imgur" class="btn btn-primary" onclick="uploadToImgur()">Upload to Imgur</button>
                 <button name="Post Reddit" value="Post Reddit" class="btn btn-primary" onclick="postToReddit()">Post to Reddit</button>
             </span>

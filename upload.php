@@ -3,7 +3,17 @@
 		<html><head><title>PHP Form Upload</title></head><body>
 		<form method='post' action='upload.php' enctype='multipart/form-data'>
 		Select a JPG or PNG File:
-		<input type='file' name='filename' size='10'>
+		<input type='file' name='filename' size='10' required>
+		Title:
+		<input type='text' name='title' required>
+		Type:
+		<select name="type" required>
+  			<option value="template">template</option>
+  			<option value="meme" disabled>meme</option>
+		</select>
+		Description:
+		<textarea name="description" rows="10" cols="40">
+		</textarea>
 		<input type='submit' value='Upload'></form>
 _END;
 
@@ -18,10 +28,13 @@ _END;
 			default:		   $ext = '';    break;
 		}
 		if ($ext){
-			$n = "image.$ext";
-			move_uploaded_file($_FILES['filename']['tmp_name'], $n);
-			echo "Uploaded image '$name' as '$n':<br>";
-			echo "<img src='$n'>";
+			$n =  __DIR__ . "/memes/image.$ext";
+			if(copy($_FILES['filename']['tmp_name'], $n)){
+				echo "Uploaded image '$name' as '$n':<br>";
+				echo "<img src='$n'>";
+			}else{
+				echo "Upload failed";
+			}
 		}
 		else echo "'$name' is not an accepted image file";
 	}

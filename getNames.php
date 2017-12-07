@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("127.0.0.1", "jkayser","","meme_site");
+$link = mysqli_connect("localhost", "jkayser","","meme_site");
 
 if(!$link){
 	echo "Error: unable to connect to MySQL";
@@ -15,6 +15,8 @@ $stmt = mysqli_prepare($link, "SELECT id,title FROM Pictures");
 mysqli_stmt_execute($stmt);
 
 mysqli_stmt_bind_result($stmt, $id, $title);
+
+echo "<li><a href='memes/1.jpg' onchange='getPicture($id)'>$title</a></li>";
 
 while(mysqli_stmt_fetch($stmt)){
 	echo "<li><a href='memes/","$id",".jpg' onchange='getPicture($id)'>$title</a></li>";
